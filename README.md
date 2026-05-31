@@ -1,7 +1,5 @@
 # SpatialUncertain
 
-This directory contains scripts for dataset generation, rendering, question generation, and model evaluation for the **SpatialUncertain** benchmark.
-
 ---
 
 ## Setup
@@ -16,14 +14,10 @@ pip install compress_json trimesh Pillow imageio numpy google-generativeai opena
 
 ### 2. Set API keys
 
-**Never hardcode keys in the scripts.** Use environment variables:
-
 ```bash
 export AZURE_OPENAI_API_KEY="your-azure-key"  # For GPT / Azure OpenAI
 export GEMINI_API_KEY="your-gemini-key"        # For Gemini
 ```
-
-Alternatively, place a `.azure_key` or `.gemini_key` file next to the script (plain text, or `KEY=value` format). These files should never be committed.
 
 ---
 
