@@ -1,0 +1,82 @@
+# SpatialUncertain
+
+This directory contains scripts for dataset generation, rendering, question generation, and model evaluation for the **SpatialUncertain** benchmark.
+
+---
+
+## Setup
+
+### 1. Install dependencies
+
+Follow the instructions at [Holodeck](https://github.com/allenai/Holodeck) to install AI2THOR and generate 3D indoor scenes. Our generated scenes are available on [Google Drive](https://drive.google.com/drive/folders/1RDGHQd-pqHZtNzvIZQSYSRgVZwm2gmw3?usp=sharing).
+
+```bash
+pip install compress_json trimesh Pillow imageio numpy google-generativeai openai
+```
+
+### 2. Set API keys
+
+**Never hardcode keys in the scripts.** Use environment variables:
+
+```bash
+export AZURE_OPENAI_API_KEY="your-azure-key"  # For GPT / Azure OpenAI
+export GEMINI_API_KEY="your-gemini-key"        # For Gemini
+```
+
+Alternatively, place a `.azure_key` or `.gemini_key` file next to the script (plain text, or `KEY=value` format). These files should never be committed.
+
+---
+
+## Usage
+
+### Step 1 — Generate scene layouts
+
+```bash
+python gen_occlusion_scene.py --batch-root /path/to/scenes/       # Occlusion scenes
+python gen_distortion_scene.py --input /path/to/scene_folder      # Distortion scenes
+```
+
+### Step 2 — Render scenes
+
+```bash
+python render_occlusion.py --scene-dir /path/to/occlusion_scene/ --port 8200
+python render_distortion.py --scene-dir /path/to/distortion_scene/ --port 8200
+```
+
+> Requires a running AI2THOR Unity build. Set `--asset-dir` if assets are not at the default path.
+
+### Step 3 — Generate questions
+
+```bash
+python generate_questions/question_gen_occlusion.py --batch-root /path/to/occlusion_scenes/
+python generate_questions/question_gen_distortion.py --batch-root /path/to/distortion_scenes/
+```
+
+### Step 4 — Evaluate models
+
+```bash
+python eval_gpt5.py \
+    --benchmark questions/occlusion_questions.json \
+    --model gpt-4o \
+    --provider azure \
+    --output-json results/gpt4o_occlusion.json
+
+python eval_gemini.py \
+    --benchmark questions/occlusion_questions.json \
+    --model gemini-2.5-flash \
+    --output-json results/gemini25flash_occlusion.json
+```
+
+---
+
+## Dataset
+
+Our benchmark dataset is available on [HuggingFace](https://huggingface.co/datasets/Yuezhangjoslin/spatialuncertain).
+
+---
+
+## Notes
+
+- All scripts expect AI2THOR assets to be present at `OBJATHOR_ASSETS_DIR` (set in `ai2holodeck/constants.py`).
+- Rendered images and scene metadata are saved alongside the scene folders by default.
+- Evaluation results are saved as JSON; a sidecar `.jsonl` file tracks per-question predictions.
