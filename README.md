@@ -3,7 +3,7 @@
 ---
 ### *Seeing Isn’t Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?*
 
-[![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2605.30557-b31b1b.svg)](https://arxiv.org/abs/2605.30557)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://zhangyuejoslin.github.io/spatialuncertain/)
 
 **Authors:** Yue Zhang, Zun Wang, Han Lin, Yonatan Bitton, Idan Szpektor, Mohit Bansal
@@ -95,7 +95,7 @@ Our benchmark dataset is available on [HuggingFace](https://huggingface.co/datas
 @article{zhang2025spatialuncertain,
   title     = {Seeing Isn't Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?},
   author    = {Zhang, Yue and Wang, Zun and Lin, Han and Bitton, Yonatan and Szpektor, Idan and Bansal, Mohit},
-  journal   = {arXiv preprint arXiv:xxxx.xxxxx},
+  journal   = {arXiv preprint arXiv:2605.30557},
   year      = {2025}
 }
 ```
