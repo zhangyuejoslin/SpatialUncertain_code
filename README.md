@@ -96,6 +96,6 @@ Our benchmark dataset is available on [HuggingFace](https://huggingface.co/datas
   title     = {Seeing Isn't Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?},
   author    = {Zhang, Yue and Wang, Zun and Lin, Han and Bitton, Yonatan and Szpektor, Idan and Bansal, Mohit},
   journal   = {arXiv preprint arXiv:2605.30557},
-  year      = {2025}
+  year      = {2026}
 }
 ```
