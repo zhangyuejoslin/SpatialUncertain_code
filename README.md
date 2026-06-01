@@ -39,14 +39,14 @@ export GEMINI_API_KEY="your-gemini-key"        # For Gemini
 
 ```bash
 python gen_occlusion_scene.py --batch-root /path/to/scenes/       # Occlusion scenes
-python gen_distortion_scene.py --input /path/to/scene_folder      # Distortion scenes
+python gen_distortion_scene.py --input /path/to/scene_folder      # perspective ambiguity scenes
 ```
 
 ### Step 2 — Render scenes
 
 ```bash
-python render_occlusion.py --scene-dir /path/to/occlusion_scene/ --port 8200
-python render_distortion.py --scene-dir /path/to/distortion_scene/ --port 8200
+python render_occlusion.py --scene-dir /path/to/occlusion_scene/ --port 
+python render_distortion.py --scene-dir /path/to/distortion_scene/ --port 
 ```
 
 > Requires a running AI2THOR Unity build. Set `--asset-dir` if assets are not at the default path.
@@ -85,7 +85,7 @@ Our benchmark dataset is available on [HuggingFace](https://huggingface.co/datas
 
 - All scripts expect AI2THOR assets to be present at `OBJATHOR_ASSETS_DIR` (set in `ai2holodeck/constants.py`).
 - Rendered images and scene metadata are saved alongside the scene folders by default.
-- Evaluation results are saved as JSON; a sidecar `.jsonl` file tracks per-question predictions.
+- Evaluation results are saved as JSON; a `.jsonl` file is also saved to track per-question predictions.
 
 ---
 
