@@ -4,6 +4,7 @@
 ### *Seeing Isn’t Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?*
 
 [![arXiv](https://img.shields.io/badge/arXiv-2505.21876-b31b1b.svg)]()
+[![Project Page](https://img.shields.io/badge/Project-Page-blue.svg)](https://zhangyuejoslin.github.io/spatialuncertain/)
 
 **Authors:** Yue Zhang, Zun Wang, Han Lin, Yonatan Bitton, Idan Szpektor, Mohit Bansal
 
