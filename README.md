@@ -86,3 +86,16 @@ Our benchmark dataset is available on [HuggingFace](https://huggingface.co/datas
 - All scripts expect AI2THOR assets to be present at `OBJATHOR_ASSETS_DIR` (set in `ai2holodeck/constants.py`).
 - Rendered images and scene metadata are saved alongside the scene folders by default.
 - Evaluation results are saved as JSON; a sidecar `.jsonl` file tracks per-question predictions.
+
+---
+
+## Citation
+
+```bibtex
+@article{zhang2025spatialuncertain,
+  title     = {Seeing Isn't Knowing: Do VLMs Know When Not to Answer Spatial Questions (and Why)?},
+  author    = {Zhang, Yue and Wang, Zun and Lin, Han and Bitton, Yonatan and Szpektor, Idan and Bansal, Mohit},
+  journal   = {arXiv preprint arXiv:2505.21876},
+  year      = {2025}
+}
+```
